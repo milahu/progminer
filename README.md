@@ -409,4 +409,4 @@ A full run showing intermediate values can be seen in [result.log](test/result.l
 
 The ProgPoW algorithm and this specification are a new work.  Copyright and related rights are waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-The reference ProgPoW mining implementation in this repository is a derivative of ethminer so retains the GPL license.
+The reference ProgPoW mining implementation in this repository is a derivative of progminer so retains the GPL license.

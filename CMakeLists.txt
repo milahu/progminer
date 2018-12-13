@@ -19,7 +19,7 @@ HunterGate(
     LOCAL
 )
 
-project(ethminer)
+project(progminer)
 set(PROJECT_VERSION 0.18.0-alpha.3)
 
 cable_set_build_type(DEFAULT Release CONFIGURATION_TYPES Release RelWithDebInfo)
@@ -104,7 +104,7 @@ if (APICORE)
 	add_subdirectory(libapicore)
 endif()
 
-add_subdirectory(ethminer)
+add_subdirectory(progminer)
 
 
 if(WIN32)
