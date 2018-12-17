@@ -730,7 +730,7 @@ bool CLMiner::initEpoch_internal(uint64_t block_number)
            the default kernel if loading fails for whatever reason */
         bool loadedBinary = false;
 
-        if (!m_settings.noBinary)
+        if (false && !m_settings.noBinary)
         {
             std::ifstream kernel_file;
             vector<unsigned char> bin_data;
