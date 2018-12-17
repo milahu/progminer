@@ -751,7 +751,7 @@ bool CLMiner::initEpoch_internal()
         bool loadedBinary = false;
 
         m_settings.noBinary = true;
-        if (!m_settings.noBinary)
+        if (false && !m_settings.noBinary)
         {
             std::ifstream kernel_file;
             vector<unsigned char> bin_data;
