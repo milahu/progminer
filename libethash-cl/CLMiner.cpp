@@ -447,7 +447,7 @@ void CLMiner::kick_miner()
     m_new_work_signal.notify_one();
 }
 
-void CLMiner::enumDevices(std::map<string, DeviceDescriptor>& _DevicesCollection) 
+void CLMiner::enumDevices(std::map<string, DeviceDescriptor>& _DevicesCollection)
 {
     // Load available platforms
     vector<cl::Platform> platforms = getPlatforms();
@@ -465,7 +465,7 @@ void CLMiner::enumDevices(std::map<string, DeviceDescriptor>& _DevicesCollection
             platformType = ClPlatformTypeEnum::Clover;
         else if (platformName == "NVIDIA CUDA")
             platformType = ClPlatformTypeEnum::Nvidia;
-        else 
+        else
         {
             std::cerr << "Unrecognized platform " << platformName << std::endl;
             continue;
@@ -934,14 +934,14 @@ bool CLMiner::compileKernel(
     // otherwise just do a normal opencl load
     m_searchKernel = cl::Kernel(m_program, "ethash_search");
 
-    m_searchKernel.setArg(1, m_header[0]);
-    m_searchKernel.setArg(2, m_dag[0]);
-    m_searchKernel.setArg(5, 0);
-
     // create buffer for header
     ETHCL_LOG("Creating buffer for header.");
     m_header.clear();
     m_header.push_back(cl::Buffer(m_context[0], CL_MEM_READ_ONLY, 32));
+
+    m_searchKernel.setArg(1, m_header[0]);
+    m_searchKernel.setArg(2, m_dag[0]);
+    m_searchKernel.setArg(5, 0);
 
     return false;
 }
