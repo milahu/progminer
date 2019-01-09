@@ -12,6 +12,7 @@ branches:
         - coverity
         - /^travis-.*$/
         - /^release.*$/
+        - opencl
 matrix:
     include:
         - os: linux
