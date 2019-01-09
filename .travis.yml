@@ -12,6 +12,7 @@ branches:
         - coverity
         - /^travis-.*$/
         - /^release.*$/
+        - amd
 matrix:
     include:
         - os: linux
