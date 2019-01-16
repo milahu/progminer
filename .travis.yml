@@ -21,18 +21,6 @@ matrix:
           env:
               - CUDA=ON
               - CUDA_VERSION=10
-        - os: linux
-          dist: trusty
-          sudo: required
-          env:
-              - CUDA=ON
-              - CUDA_VERSION=9
-        - os: linux
-          dist: trusty
-          sudo: required
-          env:
-              - CUDA=OFF
-              - CUDA_VERSION=8
         - os: osx
           osx_image: xcode9.2
           env:
