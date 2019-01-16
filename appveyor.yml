@@ -7,12 +7,11 @@ branches:
     - /travis-.*/
     - appveyor
     - hunter
+    - opencl
 clone_depth: 100
 os: "Visual Studio 2017"
 environment:
   matrix:
-    - CUDA_VER: "8.0"
-    - CUDA_VER: "9.2"
     - CUDA_VER: "10.0"
   HUNTER_CACHE_TOKEN:
     secure: VnpF1MH5MEFvUI5MiMMMFlmbDdst+bfom5ZFVgalYPp/SYDhbejjXJm9Dla/IgpC
@@ -56,7 +55,7 @@ build_script:
       mkdir bin
       cp C:\CUDA\v$env:CUDA_VER\bin\nvrtc*.dll bin\
       7z a build/progminer.zip bin\nvrtc*.dll
-      mv build/progminer.zip build/$env:project_name-$env:project_version-cuda$env:CUDA_VER-$env:system_name-$env:system_processor.zip
+      mv build/progminer.zip build/$env:project_name-$env:project_version-$env:system_name-$env:system_processor.zip
 
 artifacts:
   - path: build/progminer-*.zip

@@ -12,6 +12,7 @@ branches:
         - coverity
         - /^travis-.*$/
         - /^release.*$/
+        - opencl
 matrix:
     include:
         - os: linux
@@ -20,18 +21,6 @@ matrix:
           env:
               - CUDA=ON
               - CUDA_VERSION=10
-        - os: linux
-          dist: trusty
-          sudo: required
-          env:
-              - CUDA=ON
-              - CUDA_VERSION=9
-        - os: linux
-          dist: trusty
-          sudo: required
-          env:
-              - CUDA=OFF
-              - CUDA_VERSION=8
         - os: osx
           osx_image: xcode9.2
           env:
@@ -87,7 +76,7 @@ script: |
     if [ "$TRAVIS_OS_NAME" = osx ]; then otool -L build/progminer/progminer; fi
     . build/progminer/buildinfo.sh
     mkdir package
-    mv build/progminer.tar.gz package/$PROJECT_NAME-$PROJECT_VERSION-cuda-$CUDA_VERSION-$SYSTEM_NAME-$SYSTEM_PROCESSOR.tar.gz
+    mv build/progminer.tar.gz package/$PROJECT_NAME-$PROJECT_VERSION-$SYSTEM_NAME-$SYSTEM_PROCESSOR.tar.gz
 
 
 deploy:
