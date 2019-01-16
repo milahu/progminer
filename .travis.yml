@@ -87,7 +87,7 @@ script: |
     if [ "$TRAVIS_OS_NAME" = osx ]; then otool -L build/progminer/progminer; fi
     . build/progminer/buildinfo.sh
     mkdir package
-    mv build/progminer.tar.gz package/$PROJECT_NAME-$PROJECT_VERSION-cuda-$CUDA_VERSION-$SYSTEM_NAME-$SYSTEM_PROCESSOR.tar.gz
+    mv build/progminer.tar.gz package/$PROJECT_NAME-$PROJECT_VERSION-opencl-$SYSTEM_NAME-$SYSTEM_PROCESSOR.tar.gz
 
 
 deploy:
